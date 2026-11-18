@@ -4,8 +4,8 @@ namespace App\Controllers;
 class AuthController
 {
     // Kredensial sementara (hardcode). Akan diganti tabel user di database pada Acara 7/8.
-    private const USERNAME = '1';
-    private const PASSWORD = '1';
+    private const USERNAME = 'niha';
+    private const PASSWORD = 'niha123';
 
     // GET /login
     public function loginForm(): void
@@ -28,11 +28,11 @@ class AuthController
 
         if ($username === self::USERNAME && $password === self::PASSWORD) {
             $_SESSION['user_id']    = 1;
-            $_SESSION['user_name']  = 'Admin';
+            $_SESSION['user_name']  = $username;
             $_SESSION['logged_in']  = true;
 
             // Tugas Mandiri: flash message setelah login sukses
-            $_SESSION['flash_success'] = 'Selamat datang, Admin';
+            $_SESSION['flash_success'] = 'Selamat datang, ' . $username;
 
             header('Location: ' . BASE_URL . '/dashboard');
             exit;
