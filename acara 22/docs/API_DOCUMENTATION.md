@@ -1,6 +1,9 @@
 # Dokumentasi API
 
-Base URL mengikuti konfigurasi web server, misalnya `http://localhost/acara_21`.
+Base URL mengikuti konfigurasi web server:
+
+`http://localhost/si_akademik/acara%2021/public`
+
 Semua endpoint mengembalikan `Content-Type: application/json`.
 
 ## Format Respons
@@ -22,7 +25,7 @@ Nilai `data` dapat berupa object, array, atau `null`, bergantung pada endpoint.
 
 Controller: `AuthController::register()`
 
-Mendaftarkan pengguna baru. Field `username` dan `email` harus unik.
+Mendaftarkan pengguna baru dengan mengisi username, email, dan password. Password disimpan menggunakan proses hashing.
 
 **Headers:** `Content-Type: application/json`
 
@@ -106,7 +109,7 @@ Melakukan login dan menghasilkan token Bearer yang berlaku selama 1 jam.
 
 Controller: `MahasiswaController::index()`
 
-Mengambil seluruh data mahasiswa, diurutkan berdasarkan `id` terbaru.
+Mengambil seluruh data mahasiswa.
 
 **Headers:** Tidak ada header khusus.
 
@@ -227,7 +230,7 @@ Authorization: Bearer <token>
 
 Controller: `MahasiswaController::update()`
 
-Memperbarui data mahasiswa. Endpoint ini memerlukan autentikasi.
+Memperbarui data mahasiswa berdasarkan `id`. Endpoint ini memerlukan autentikasi.
 
 **Headers:**
 
@@ -261,7 +264,7 @@ Authorization: Bearer <token>
 
 Controller: `MahasiswaController::destroy()`
 
-Menghapus data mahasiswa. Endpoint ini memerlukan autentikasi.
+Menghapus data mahasiswa berdasarkan `id`. Endpoint ini memerlukan autentikasi.
 
 **Headers:**
 
@@ -282,9 +285,7 @@ Authorization: Bearer <token>
 
 ## Respons Autentikasi
 
-Endpoint `POST /mahasiswa`, `PUT /mahasiswa?id={id}`, dan
-`DELETE /mahasiswa?id={id}` menolak permintaan tanpa token atau dengan token
-yang tidak valid.
+Endpoint `POST /mahasiswa`, `PUT /mahasiswa?id={id}`, dan `DELETE /mahasiswa?id={id}` menolak permintaan tanpa token atau dengan token yang tidak valid.
 
 **Response 401 Unauthorized:**
 
@@ -297,5 +298,4 @@ yang tidak valid.
 }
 ```
 
-Untuk token yang tidak valid atau kedaluwarsa, nilai `message` adalah
-`"Token tidak valid atau kedaluwarsa"`.
+Untuk token yang tidak valid atau kedaluwarsa, nilai `message` adalah `"Token tidak valid atau kedaluwarsa"`.
