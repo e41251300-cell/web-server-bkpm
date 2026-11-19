@@ -1,0 +1,12 @@
+[2026-11-18 18:23:38] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '254305060' for key 'mahasiswa.nim' in C:\laragon\www\si_akademik\acara 15\api\mahasiswa.php:78
+#0 C:\laragon\www\si_akademik\acara 15\api\mahasiswa.php(78): PDOStatement->execute(Array)
+#1 {main}
+
+[2026-11-18 18:25:22] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '254305060' for key 'mahasiswa.nim' in C:\laragon\www\si_akademik\acara 15\api\mahasiswa.php:78
+#0 C:\laragon\www\si_akademik\acara 15\api\mahasiswa.php(78): PDOStatement->execute(Array)
+#1 {main}
+
+[2026-11-18 18:45:01] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '250000004' for key 'mahasiswa.nim' in C:\laragon\www\si_akademik\acara 15\api\mahasiswa.php:145
+#0 C:\laragon\www\si_akademik\acara 15\api\mahasiswa.php(145): PDOStatement->execute(Array)
+#1 {main}
+

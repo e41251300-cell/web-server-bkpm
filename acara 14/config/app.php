@@ -5,5 +5,5 @@
 return [
     // Base path project di Laragon: http://localhost/acara_6/public
     // Dipakai router untuk menghilangkan prefix subfolder dari REQUEST_URI
-    'base_url' => '/acara_14/public',
+    'base_url' => '/si_akademik/acara%2014/public',
 ];
